@@ -1,29 +1,27 @@
-package builder;
+import org.junit.Test;
 
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class AbaNavegadorBuilderTest
 {
     @Test
-    void retornaSucesso()
+    public void retornaSucesso()
     {
-        AbaNavegadorBuilder abaNavegadorBuilder = new AbaNavegadorBuilder();
-        AbaNavegador abaNavegador = abaNavegadorBuilder
-                .setUrl("google.com")
-                .setNome("Google")
-                .setConteudo("Serviço de Busca")
-                .setDataAcesso("30/11/2021")
-                .build();
+            AbaNavegadorBuilder abaNavegadorBuilder = new AbaNavegadorBuilder();
+            AbaNavegador abaNavegador = abaNavegadorBuilder
+                    .setUrl("google.com")
+                    .setNome("Google")
+                    .setConteudo("Serviço de Busca")
+                    .setDataAcesso("30/11/2021")
+                    .build();
 
-        assertNotNull(abaNavegador);
+            assertNotNull(abaNavegador);
     }
 
     @Test
-    void retornaExcecaoURL()
+    public void retornaExcecaoURL()
     {
         try
         {
@@ -41,7 +39,7 @@ public class AbaNavegadorBuilderTest
     }
 
     @Test
-    void retornaExcecaoSemNome()
+    public void retornaExcecaoSemNome()
     {
         try
         {
@@ -57,6 +55,4 @@ public class AbaNavegadorBuilderTest
             assertEquals("Nome inválido", ex.getMessage());
         }
     }
-
-
 }

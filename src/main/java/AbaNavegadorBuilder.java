@@ -1,6 +1,3 @@
-package builder;
-import java.util.Date;
-
 public class AbaNavegadorBuilder
 {
     private AbaNavegador abaNavegador;
@@ -45,5 +42,4 @@ public class AbaNavegadorBuilder
         abaNavegador.setDataAcesso(dataAcesso);
         return this;
     }
-
 }
